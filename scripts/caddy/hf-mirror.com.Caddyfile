@@ -74,7 +74,7 @@
 	@invalid_referer {
 		path_regexp .*/resolve/main/.*
 		not header !Referer
-		not header_regexp Referer ^https?://(\.*\.)?hf-mirror\.com(/|$)
+		not header_regexp Referer ^https?://(\.*\.)?{$MIRROR_HOST}(/|$)
 	}
 	rewrite @invalid_referer /invalid_referer.html
 
@@ -114,8 +114,11 @@
 			header_up Accept-Encoding identity
 			header_up Host {upstream_hostport}
 			header_down Location cdn-lfs\.huggingface\.co cdn-lfs.{$MIRROR_HOST}
+			header_down Location cdn-lfs\.hf.co cdn-lfs.{$MIRROR_HOST}
 			header_down Location cdn-lfs-us-1\.huggingface\.co cdn-lfs-us-1.{$MIRROR_HOST}
+			header_down Location cdn-lfs-us-1\.hf.co cdn-lfs-us-1.{$MIRROR_HOST}
 			header_down Location huggingface\.co {$MIRROR_HOST}
+			header_down Location hf\.co {$MIRROR_HOST}
 		}
 	}
 
@@ -128,8 +131,11 @@
 		reverse_proxy https://huggingface.co {
 			header_up Host {upstream_hostport}
 			header_down Location cdn-lfs\.huggingface\.co cdn-lfs.{$MIRROR_HOST}
+			header_down Location cdn-lfs\.hf.co cdn-lfs.{$MIRROR_HOST}
 			header_down Location cdn-lfs-us-1\.huggingface\.co cdn-lfs-us-1.{$MIRROR_HOST}
+			header_down Location cdn-lfs-us-1\.hf.co cdn-lfs-us-1.{$MIRROR_HOST}
 			header_down Location huggingface\.co {$MIRROR_HOST}
+			header_down Location hf\.co {$MIRROR_HOST}
 		}
 	}
 
@@ -140,8 +146,11 @@
 			header_up Host {upstream_hostport}
 			header_up X-Api-Key {$API_KEY}
 			header_down Location cdn-lfs\.huggingface.co cdn-lfs.{$MIRROR_HOST}
+			header_down Location cdn-lfs\.hf.co cdn-lfs.{$MIRROR_HOST}
 			header_down Location cdn-lfs-us-1\.huggingface.co cdn-lfs-us-1.{$MIRROR_HOST}
+			header_down Location cdn-lfs-us-1\.hf.co cdn-lfs-us-1.{$MIRROR_HOST}
 			header_down Location huggingface\.co {$MIRROR_HOST}
+			header_down Location hf\.co {$MIRROR_HOST}
 		}
 	}
 }
