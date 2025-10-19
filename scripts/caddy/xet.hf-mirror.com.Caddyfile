@@ -1,0 +1,12 @@
+cas-bridge.xethub.{$MIRROR_HOST} {
+	import tls_hf_com
+	log hf
+	route /xet-bridge-us/* {
+		reverse_proxy https://cas-bridge.xethub.hf.co {
+			header_up Host {upstream_hostport}
+		}
+	}
+	route /* {
+			redir https://{$MIRROR_HOST}
+	}
+}

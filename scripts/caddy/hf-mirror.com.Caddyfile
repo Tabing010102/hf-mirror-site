@@ -117,6 +117,7 @@
 			header_down Location cdn-lfs\.hf.co cdn-lfs.{$MIRROR_HOST}
 			header_down Location cdn-lfs-us-1\.huggingface\.co cdn-lfs-us-1.{$MIRROR_HOST}
 			header_down Location cdn-lfs-us-1\.hf.co cdn-lfs-us-1.{$MIRROR_HOST}
+			header_down Location cas-bridge.xethub\.hf.co cas-bridge.xethub.{$MIRROR_HOST}
 			header_down Location huggingface\.co {$MIRROR_HOST}
 			header_down Location hf\.co {$MIRROR_HOST}
 		}
@@ -134,6 +135,7 @@
 			header_down Location cdn-lfs\.hf.co cdn-lfs.{$MIRROR_HOST}
 			header_down Location cdn-lfs-us-1\.huggingface\.co cdn-lfs-us-1.{$MIRROR_HOST}
 			header_down Location cdn-lfs-us-1\.hf.co cdn-lfs-us-1.{$MIRROR_HOST}
+			header_down Location cas-bridge.xethub\.hf.co cas-bridge.xethub.{$MIRROR_HOST}
 			header_down Location huggingface\.co {$MIRROR_HOST}
 			header_down Location hf\.co {$MIRROR_HOST}
 		}
@@ -149,6 +151,7 @@
 			header_down Location cdn-lfs\.hf.co cdn-lfs.{$MIRROR_HOST}
 			header_down Location cdn-lfs-us-1\.huggingface.co cdn-lfs-us-1.{$MIRROR_HOST}
 			header_down Location cdn-lfs-us-1\.hf.co cdn-lfs-us-1.{$MIRROR_HOST}
+			header_down Location cas-bridge.xethub\.hf.co cas-bridge.xethub.{$MIRROR_HOST}
 			header_down Location huggingface\.co {$MIRROR_HOST}
 			header_down Location hf\.co {$MIRROR_HOST}
 		}
